@@ -1,5 +1,5 @@
 % ----------------------------------------------
-% Script Name: NeuroEl_CorrelationAnalysis.m
+% Script Name: neuroelf_correlation_analysis.m
 % Author: Julio Medeiros
 % Email: juliomedeiros@dei.uc.pt
 % Institution: University of Coimbra (UC), Centre for Informatics and Systems of the University of Coimbra (UC)

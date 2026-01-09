@@ -1,5 +1,5 @@
 % ----------------------------------------------
-% Script Name: BCG_cleaning.m
+% Script Name: bcg_cleaning.m
 % Author: Julio Medeiros
 % Email: juliomedeiros@dei.uc.pt
 % Institution: University of Coimbra (UC), Centre for Informatics and Systems of the University of Coimbra (UC)

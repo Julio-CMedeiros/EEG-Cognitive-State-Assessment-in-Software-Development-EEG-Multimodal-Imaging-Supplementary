@@ -1,5 +1,5 @@
 % ----------------------------------------------
-% Script Name: ICA_rejection.m
+% Script Name: ica_rejection.m
 % Author: Julio Medeiros
 % Email: juliomedeiros@dei.uc.pt
 % Institution: University of Coimbra (UC), Centre for Informatics and Systems of the University of Coimbra (UC)

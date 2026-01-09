@@ -13,7 +13,7 @@ This repository contains the MATLAB scripts that supported the preprocessing, ar
 | Tool | Suggested location | Notes |
 | --- | --- | --- |
 | [EEGLAB 14.1.2](https://sccn.ucsd.edu/eeglab/download.php) | `vendor/eeglab` | Required for dataset operations, ICA, filtering, and plotting.
-| [ICLabel plugin (v1.2.5)](https://sccn.ucsd.edu/plugins/iclabel/) | `vendor/eeglab/plugins/ICLabel1.2.5` | Used by `ICA_rejection.m`.
+| [ICLabel plugin (v1.2.5)](https://sccn.ucsd.edu/plugins/iclabel/) | `vendor/eeglab/plugins/ICLabel1.2.5` | Used by `ica_rejection.m`.
 | [NeuroElf](https://neuroelf.net/) | `vendor/neuroelf` | Needed for VOI/BOLD/voxel manipulation and figure generation.
 | Rodolfo toolbox | `toolbox_rodolfo` | Zipped version is included; unzip before running the helpers.
 | Custom helpers | `vendor/funcoes` | Placeholder for `stacking_*` helpers referenced by `create_figure_overlap.m`.
@@ -23,7 +23,7 @@ After downloading each dependency, extract it inside the mentioned folder or set
 ## Repository layout
 
 - `project_config.m`: Centralized path configuration used by every script to avoid hard-coded personal paths.
-- `.m` scripts: preprocessing phases (`GA_cleaning.m`, `BCG_cleaning.m`, `filtering.m`, `inter_reref.m`, `epoching*.m`, `ICA_*`, etc.), trigger helpers, and NeuroElf analysis.
+- `.m` scripts: preprocessing phases (`ga_cleaning.m`, `bcg_cleaning.m`, `filtering.m`, `inter_reref.m`, `epoching*.m`, `ica_*`, etc.), trigger helpers, and NeuroElf analysis.
 - `data/`: Placeholder directories for raw inputs, processed outputs, derivatives, and external assets.
 - `toolbox_rodolfo.zip`: Zipped Rodolfo helper toolbox that can be extracted into `toolbox_rodolfo/`.
 - `triggersinfor.mat`: Example metadata produced by the trigger inspection tools.
@@ -56,11 +56,11 @@ The code intentionally avoids naming any personal drives or machines. If you nee
 ## Typical processing order
 
 1. **Trigger validation** (`verifying_triggers.m`, `triggers_fixing.m`, `eventos_contagem.m`) ensures the event markers are consistent.
-2. **GA and BCG removal** (`GA_cleaning.m`, `BCG_cleaning.m`, `cuttingoff_sec_after_BCG.m`).
+2. **GA and BCG removal** (`ga_cleaning.m`, `bcg_cleaning.m`, `cutoff_sec_after_bcg.m`).
 3. **Filtering and rereferencing** (`filtering.m`, `inter_reref.m`).
 4. **Epoching + Hanning window** (`epoching.m`, `epoching_hanning.m`).
-5. **ICA computation + rejection** (`ICA_step.m`, `ICA_rejection.m`, `get_epochs_removed.m`).
-6. **Correlation analysis** using NeuroElf (`NeuroElf_CorrelationAnalysis.m`, `dice_coeff_calculation_and_correlation_hrf4.m`, `create_figure_overlap.m`).
+5. **ICA computation + rejection** (`ica_step.m`, `ica_rejection.m`, `get_epochs_removed.m`).
+6. **Correlation analysis** using NeuroElf (`neuroelf_correlation_analysis.m`, `dice_coeff_calculation_and_correlation_hrf4.m`, `create_figure_overlap.m`).
 
 Each script reads from the paths exposed by `project_config` and writes results to the placeholder folders (or to custom locations when env vars point elsewhere).
 
